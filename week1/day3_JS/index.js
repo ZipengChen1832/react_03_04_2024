@@ -13,6 +13,7 @@
 
 // var, let, const
 
+// //besides these five, almost everything else is an object
 // var str = "qwjdioqw";
 // var num = 1;
 // var bool = true;
@@ -112,3 +113,71 @@
 // }
 
 // console.log(sum(1,2));
+
+// const address = "21984u2198";
+
+const person1 = {
+  name: "Joe",
+  age: 11,
+  gender: "M",
+  address: {
+    address1: "123",
+    address2: "something random",
+    zip: 100000,
+  },
+};
+
+//shallow copy
+const person3 = {
+  ...person1,
+  //   name: person1.name,
+  //   age: person1.age,
+  //   gender: person1.gender,
+};
+
+// const person1Str = JSON.stringify(person1);
+// const personDeepCopy = JSON.parse(person1Str);
+// const personDeepCopy = JSON.parse(JSON.stringify(person1))
+const personDeepCopy = structuredClone(person1)
+personDeepCopy.address.address1="eqwewqewq"
+// console.log(person1);
+// console.log(personDeepCopy);
+
+
+// console.log(person3);
+
+// person3.name = "Jack";
+person3.address.zip = 200000;
+
+// console.log("person1", person1);
+// console.log("person3", person3);
+
+// const person2 = {
+//   name: "Joe",
+//   age: 11,
+//   gender: "M",
+// };
+
+// const person1Address = person1.address.address2
+// const person2Address = person2.address?.address2
+// console.log(person2Address);
+
+// const { age, gender1, address: personAddress, name } = person;
+// console.log(address);
+
+// const pname = person.name;
+// const age = person.age;
+// const gender = person.gender
+
+// const personElem = document.querySelector(".person");
+// const nameElem = document.createElement("div");
+// nameElem.textContent = person.name;
+// const ageElem = document.createElement("div");
+// ageElem.textContent = person.age;
+// personElem.append(nameElem, ageElem);
+
+
+
+//TODO
+//array destructure
+//rest operator / spread operator

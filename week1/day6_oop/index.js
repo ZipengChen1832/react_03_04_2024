@@ -61,11 +61,20 @@
 
 //es6 class syntax
 class Person {
+
+  //static methods belong to the class
+  //instances do not have access to static methods
+  static abc(){
+    console.log("abc");
+  }
+
   constructor(name, age) {
     this.name = name;
     this.age = age;
   }
 
+  //instances have access to prototype methods
+  //Person class doesn't
   sayHi() {
     console.log("this", this);
     // return `Hi, I'm ${this.name}`;

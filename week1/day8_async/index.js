@@ -14,14 +14,14 @@ const followings = [
 //   setTimeout(() => {
 //     const joeInfo = users[0];
 //     cb(joeInfo);
-//   }, 1000);
+//   }, 500);
 // }
 
 // function getUserInfo(userId, cb) {
 //   setTimeout(() => {
 //     const user = users.find((u) => u.id === userId);
 //     cb(user);
-//   }, 1000);
+//   }, 500);
 // }
 
 // function getFollowings(userId, cb) {
@@ -31,7 +31,7 @@ const followings = [
 //     ).followings;
 
 //     cb(followingIDs);
-//   }, 1000);
+//   }, 500);
 // }
 
 //callback hell
@@ -48,12 +48,13 @@ const followings = [
 // //do some thing
 
 function getJoe() {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
+      // reject("we can't get joe")
       const joeInfo = users[0];
       resolve(joeInfo);
     });
-  }, 1000);
+  }, 500);
 }
 
 function getFollowings(userId) {
@@ -63,59 +64,102 @@ function getFollowings(userId) {
         (user) => user.userId === userId
       ).followings;
       resolve(followingIDs);
-    }, 1000);
+    }, 500);
   });
 }
 
 function getUserInfo(userId) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       const user = users.find((u) => u.id === userId);
+      if (!user) {
+        reject(`user with id ${userId} not found`);
+      }
+
       resolve(user);
-    }, 1000);
+    }, 500);
   });
 }
 
 // const p = new Promise((resolve, reject) => {
 //   setTimeout(() => {
 //     resolve(5);
-//   }, 1000);
+//   }, 500);
 // });
 
-getJoe()
-  .then((joeInfo) => {
-    const { id } = joeInfo;
-    // return another promise
-    // return new Promise((res)=>{
-    //   res("iowqjrioqwoirjwqo")
-    // })
-    console.log("we got joe's id", id);
-    return getFollowings(id);
-  })
-  .then((followingIDs) => {
-    const followingsPromise = followingIDs.map((id) => getUserInfo(id));
-    console.log(followingsPromise);
-    return getUserInfo(2);
-  })
-  .then((userInfo) => {
-    console.log("we got one of joe's following details", userInfo);
-  });
+// getJoe()
+//   .then((joeInfo) => {
+//     const { id } = joeInfo;
+//     // return another promise
+//     // return new Promise((res)=>{
+//     //   res("iowqjrioqwoirjwqo")
+//     // })
+//     console.log("we got joe's id", id);
+//     return getFollowings(id);
+//   })
+//   .then((followingIDs) => {
+//     // return getUserInfo(6);
+//     return Promise.all(followingIDs.map((id) => getUserInfo(id)));
+//   })
+//   .then((usersInfo) => {
+//     // console.log(`${usersInfo[0].username} is friend with ${joeInfo.username}`);
+//   })
+//   .catch((err) => {
+//     console.log("Error", err);
+//   });
 
-class Person {
-  static abc(){
-    console.log("abc");
-  }
-
-  constructor(name) {
-    this.name = name;
-  }
-
-  sayHi() {
-    console.log(this.name);
+//async / await
+async function foo() {
+  try {
+    const joeInfo = await getJoe();
+    const followingIDs = await getFollowings(joeInfo.id);
+    const followingUsers = await Promise.all(
+      followingIDs.map((id) => getUserInfo(id))
+    );
+    console.log(
+      `${followingUsers[0].username} is friend with ${joeInfo.username}`
+    );
+  } catch (err) {
+    console.log("Error", err);
   }
 }
 
+// foo();
 
-const p123 = new Person("jack")
+// fetch("https://jsonplaceholder.typicode.com/posts")
+//   .then((res) => res.json())
+//   .then((data) => {
+//     console.log(data);
+//   });
 
-// Person.say
+const BASE_URL = "https://jsonplaceholder.typicode.com";
+async function fetchPosts() {
+  const res = await fetch(`${BASE_URL}/posts`);
+  const posts = await res.json();
+  console.log(posts);
+}
+
+async function createPost(newPost) {
+  // const { title, userId, body } = newPost;
+  const res = await fetch(`${BASE_URL}/posts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newPost),
+  });
+  const data = await res.json();
+  // console.log(data);
+}
+
+createPost({
+  userId: 1,
+  title: "My Post",
+  body: "lorem ipsum",
+});
+
+const bar = async () => {
+  return "bar";
+};
+
+bar().then((data) => console.log(data));

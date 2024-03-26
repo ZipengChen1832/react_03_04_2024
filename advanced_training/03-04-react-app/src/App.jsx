@@ -3,6 +3,8 @@ import React from "react";
 import Todo, { foo } from "./components/day1/Todo";
 import ConditionalRendering from "./components/day1/ConditionalRendering";
 import List from "./components/day1/List";
+import Count from "./components/day2/Count";
+import ClassCounter from "./components/day2/ClassCounter";
 
 //jsx syntax
 //javascript xml
@@ -14,10 +16,13 @@ function App() {
   return (
     <div className="App">
       <h1>hello world</h1>
-
+      {/* <Count /> */}
+      <ClassCounter />
     </div>
   );
 }
+
+
 
 // function DocRow({ text, isActive = false }) {
 //   return (

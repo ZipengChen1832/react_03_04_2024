@@ -5,6 +5,8 @@ import ConditionalRendering from "./components/day1_UI/ConditionalRendering";
 import List from "./components/day1_UI/List";
 import Count from "./components/day2_state/Count";
 import ClassCounter from "./components/day2_state/ClassCounter";
+import ClassLifecycle from "./components/day3_Lifecycle/ClassLifecycle";
+import FunctionLifecycle from "./components/day3_Lifecycle/FunctionLifecycle";
 
 //jsx syntax
 //javascript xml
@@ -15,14 +17,12 @@ import ClassCounter from "./components/day2_state/ClassCounter";
 function App() {
   return (
     <div className="App">
-      <h1>hello world</h1>
       {/* <Count /> */}
-      <ClassCounter />
+      {/* <ClassCounter /> */}
+      <FunctionLifecycle />
     </div>
   );
 }
-
-
 
 // function DocRow({ text, isActive = false }) {
 //   return (

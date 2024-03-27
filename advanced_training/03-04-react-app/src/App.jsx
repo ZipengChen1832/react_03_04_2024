@@ -1,10 +1,10 @@
 import "./App.css";
 import React from "react";
-import Todo, { foo } from "./components/day1/Todo";
-import ConditionalRendering from "./components/day1/ConditionalRendering";
-import List from "./components/day1/List";
-import Count from "./components/day2/Count";
-import ClassCounter from "./components/day2/ClassCounter";
+import Todo, { foo } from "./components/day1_UI/Todo";
+import ConditionalRendering from "./components/day1_UI/ConditionalRendering";
+import List from "./components/day1_UI/List";
+import Count from "./components/day2_state/Count";
+import ClassCounter from "./components/day2_state/ClassCounter";
 
 //jsx syntax
 //javascript xml

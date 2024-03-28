@@ -1,14 +1,14 @@
 import "./App.css";
 import React, { useState } from "react";
-import Todo, { foo } from "./components/day1_UI/Todo";
-import ConditionalRendering from "./components/day1_UI/ConditionalRendering";
-import List from "./components/day1_UI/List";
-import Count from "./components/day2_state/Count";
-import ClassCounter from "./components/day2_state/ClassCounter";
-import ClassLifecycle from "./components/day3_Lifecycle/ClassLifecycle";
-import FunctionLifecycle from "./components/day3_Lifecycle/FunctionLifecycle";
-import ABC from "./components/day4/ABC";
-import TodoList from "./components/day4/TodoList";
+import Todo, { foo } from "./day1_UI/Todo";
+import ConditionalRendering from "./day1_UI/ConditionalRendering";
+import List from "./day1_UI/List";
+import Count from "./day2_state/Count";
+import ClassCounter from "./day2_state/ClassCounter";
+import ClassLifecycle from "./day3_Lifecycle/ClassLifecycle";
+import FunctionLifecycle from "./day3_Lifecycle/FunctionLifecycle";
+import ABC from "./day4/ABC";
+import TodoList from "./day4/TodoList";
 
 //jsx syntax
 //javascript xml

@@ -8,7 +8,8 @@ import ClassCounter from "./day2_state/ClassCounter";
 import ClassLifecycle from "./day3_Lifecycle/ClassLifecycle";
 import FunctionLifecycle from "./day3_Lifecycle/FunctionLifecycle";
 import ABC from "./day4/ABC";
-import TodoList from "./day4/TodoList";
+import TodosApp from "./day4/TodosApp";
+import ReducerHook from "./day4/ReducerHook";
 
 //jsx syntax
 //javascript xml
@@ -24,8 +25,11 @@ function App() {
       {/* <Count /> */}
       {/* <ClassCounter /> */}
       {/* <FunctionLifecycle /> */}
+
+      {/* Day 4 */}
       {/* <ABC /> */}
-      <TodoList />
+      <TodosApp />
+      {/* <ReducerHook /> */}
     </div>
   );
 }

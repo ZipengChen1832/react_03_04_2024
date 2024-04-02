@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import Counter from "./hoc/Counter";
-import Stock from "./hoc/Stock";
-import Posts from "./hoc/Posts";
+import Posts from "./components/Posts";
 
 export default function Day6() {
   return (

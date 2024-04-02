@@ -1,6 +1,8 @@
 import { Component } from "react";
 
 //hoc is a function, that receives a component as argument, and returns a new component
+//its purpose is to reuse state and lifecycle logics
+
 export default function withCounter(OldComponent) {
   return class NewComponent extends Component {
     state = {

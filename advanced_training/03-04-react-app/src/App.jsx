@@ -8,6 +8,7 @@ import ClassCounter from "./day2_state/ClassCounter";
 import ClassLifecycle from "./day3_Lifecycle/ClassLifecycle";
 import FunctionLifecycle from "./day3_Lifecycle/FunctionLifecycle";
 import Day6 from "./day6_HOC";
+import Day7 from "./day7_custom_hooks";
 
 //jsx syntax
 //javascript xml
@@ -26,7 +27,8 @@ function App() {
 
       {/* <ReducerHook /> */}
 
-      <Day6 />
+      {/* <Day6 /> */}
+      <Day7 />
     </div>
   );
 }

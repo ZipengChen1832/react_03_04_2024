@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import withCounter from "./withCounter";
+import withCounter from "../hoc/withCounter";
 
 class Counter extends Component {
-
-
   render() {
     const { count, increment, decrement, reset } = this.props;
     return (
@@ -20,4 +18,4 @@ class Counter extends Component {
   }
 }
 
-export default withCounter(Counter);
+export default withFetch(withCounter(Counter), "api_url");

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import withCounter from "./withCounter";
+import withCounter from "../hoc/withCounter";
 
 class Stock extends Component {
   render() {

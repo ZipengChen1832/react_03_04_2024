@@ -9,6 +9,7 @@ import ClassLifecycle from "./day3_Lifecycle/ClassLifecycle";
 import FunctionLifecycle from "./day3_Lifecycle/FunctionLifecycle";
 import Day6 from "./day6_HOC";
 import Day7 from "./day7_custom_hooks";
+import Day8 from "./day8_redux";
 
 //jsx syntax
 //javascript xml
@@ -28,7 +29,8 @@ function App() {
       {/* <ReducerHook /> */}
 
       {/* <Day6 /> */}
-      <Day7 />
+      {/* <Day7 /> */}
+      <Day8 />
     </div>
   );
 }

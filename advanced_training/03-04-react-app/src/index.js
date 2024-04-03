@@ -1,7 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import { store } from "./day8_redux/redux/";
 import "./index.css";
 import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+
+
+// console.log(store);
+// console.log(store.getState());
+// store.dispatch({ type: "ADD" });
+// console.log(store.getState());
+// store.dispatch({ type: "toggle_theme" });
+// console.log(store.getState());
+
+
+
+
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);

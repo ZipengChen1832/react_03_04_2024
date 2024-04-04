@@ -1,0 +1,9 @@
+.control-panel {
+    display: flex;
+    gap: 1rem;
+}
+
+.control-panel__column {
+    display: flex;
+    flex-direction: column;
+}

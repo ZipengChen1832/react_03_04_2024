@@ -10,6 +10,7 @@ import FunctionLifecycle from "./day3_Lifecycle/FunctionLifecycle";
 import Day6 from "./day6_HOC";
 import Day7 from "./day7_custom_hooks";
 import Day8 from "./day8_redux";
+import Day9 from "./day9_redux2";
 
 //jsx syntax
 //javascript xml
@@ -30,7 +31,8 @@ function App() {
 
       {/* <Day6 /> */}
       {/* <Day7 /> */}
-      <Day8 />
+      {/* <Day8 /> */}
+      <Day9 />
     </div>
   );
 }

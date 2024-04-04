@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, deleteTodo } from "./redux/reducers/todosReducer";
+import { addTodo, deleteTodo } from "../redux/reducers/todosReducer";
 
 export default function Todos() {
   const todos = useSelector((state) => state.todos);

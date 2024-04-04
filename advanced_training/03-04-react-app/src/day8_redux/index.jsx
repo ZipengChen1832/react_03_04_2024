@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Todos from "./Todos";
-import { addCount } from "./redux/reducers/countReducer";
+import { addCount } from "../redux/reducers/countReducer";
 
 export default function Day8() {
   const count = useSelector((state) => state.count);

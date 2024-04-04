@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useMemo } from "react";
+import shortid from "shortid";
 
 export default function RadioGroup({ values, value, onChange }) {
+  const radioGroupId = useMemo(() => {
+    return shortid.generate();
+  }, []);
+
   return (
     <div>
       {values.map((v) => {
@@ -9,7 +14,7 @@ export default function RadioGroup({ values, value, onChange }) {
             <input
               type="radio"
               //for now some random stuff
-              name="dijwqiofhiqwouhfoqiwfj"
+              name={`radio-group-${radioGroupId}`}
               value={v}
               checked={v === value}
               onChange={(e) => {

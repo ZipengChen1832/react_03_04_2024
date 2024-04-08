@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import NewTaskForm from "./components/NewTaskForm";
 import TasksList from "./components/TasksList";
@@ -9,9 +9,16 @@ import {
   STATUS_ALL,
   STATUS_COMPLETE,
 } from "../redux/reducers/filterReducer";
+import { getTasksAsync } from "../redux/reducers/tasksReducer";
 
 export default function Day9() {
   const tasks = useSelector((state) => state.tasks);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTasksAsync());
+  }, []);
+  
   const { colors: filterColorsHex, status } = useSelector(
     (state) => state.filter
   );

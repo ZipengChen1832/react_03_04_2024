@@ -1,20 +1,21 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import {
-  changeTaskColor,
-  deleteTask,
-  toggleTaskComplete,
-} from "../../redux/reducers/tasksReducer";
 import { availableColors } from "../constants/colors";
+import {
+  changeTaskColorAsync,
+  deleteTaskAsync,
+  toggleTaskCompleteAsync,
+} from "../../redux/reducers/tasksReducer";
 
 export default function TasksList({ tasks }) {
   return (
-    <div style={{
-      height: "200px",
-      border: "1px solid black",
-      overflowY: "scroll"
-
-    }}>
+    <div
+      style={{
+        height: "200px",
+        border: "1px solid black",
+        overflowY: "scroll",
+      }}
+    >
       {tasks.map((task) => {
         return <TaskRow key={task.id} task={task} />;
       })}
@@ -27,13 +28,13 @@ function TaskRow({ task }) {
 
   const dispatch = useDispatch();
   const handleToggleTask = (id) => {
-    dispatch(toggleTaskComplete(id));
+    dispatch(toggleTaskCompleteAsync(id));
   };
   const handleDeleteTask = (id) => {
-    dispatch(deleteTask(id));
+    dispatch(deleteTaskAsync(id));
   };
   const handleChangeColor = (id, newColor) => {
-    dispatch(changeTaskColor(id, newColor));
+    dispatch(changeTaskColorAsync(id, newColor));
   };
 
   return (

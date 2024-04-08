@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTask } from "../../redux/reducers/tasksReducer";
+import { addTaskAsync } from "../../redux/reducers/tasksReducer";
 
 export default function NewTaskForm() {
   const [newTaskTitle, setNewTaskTile] = useState("");
   const dispatch = useDispatch();
 
   const handleAddNewTask = (title) => {
-    dispatch(addTask(title));
+    dispatch(addTaskAsync(title));
   };
 
   return (

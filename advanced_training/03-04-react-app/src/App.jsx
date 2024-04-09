@@ -12,6 +12,7 @@ import Day7 from "./day7_custom_hooks";
 import Day8 from "./day8_redux";
 import Day9 from "./day9_redux2";
 import Day11 from "./day11_redux3";
+import Day12 from "./day12_react_router";
 
 //jsx syntax
 //javascript xml
@@ -33,8 +34,9 @@ function App() {
       {/* <Day6 /> */}
       {/* <Day7 /> */}
       {/* <Day8 /> */}
-      <Day9 />
+      {/* <Day9 /> */}
       {/* <Day11 /> */}
+      <Day12 />
     </div>
   );
 }

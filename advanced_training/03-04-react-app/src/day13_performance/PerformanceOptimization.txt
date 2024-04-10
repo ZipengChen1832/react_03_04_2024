@@ -1,0 +1,9 @@
+1. Prevent Unnecessary rerendering
+2. cache expensive calculations with useMemo
+3. To reduce initial Loading Time
+    a. Code splitting & Lazy loading
+    b. Server side rendering: sending a pre generated html from the server (next.js)
+    c. host statics assets in CDN
+    d. in bundlers such as webpack, there's a feature called "tree shaking"
+4. Pagination
+    server side pagination. smaller amount of data to display each time

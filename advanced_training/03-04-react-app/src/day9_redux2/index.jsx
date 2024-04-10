@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import NewTaskForm from "./components/NewTaskForm";
@@ -18,33 +18,35 @@ export default function Day9() {
   useEffect(() => {
     dispatch(getTasksAsync());
   }, []);
-  
+
   const { colors: filterColorsHex, status } = useSelector(
     (state) => state.filter
   );
 
-  const filteredTasks = tasks.filter((task) => {
-    const filterByColor =
-      filterColorsHex.length === 0 || filterColorsHex.includes(task.color);
-    let filterByStatus;
-    switch (status) {
-      case STATUS_ALL:
-        filterByStatus = true;
-        break;
-      case STATUS_ACTIVE:
-        filterByStatus = task.completed === false;
-        break;
-      case STATUS_COMPLETE:
-        filterByStatus = task.completed === true;
-        break;
-      default:
-        break;
-    }
+  const filteredTasks = useMemo(() => {
+    return tasks.filter((task) => {
+      const filterByColor =
+        filterColorsHex.length === 0 || filterColorsHex.includes(task.color);
+      let filterByStatus;
+      switch (status) {
+        case STATUS_ALL:
+          filterByStatus = true;
+          break;
+        case STATUS_ACTIVE:
+          filterByStatus = task.completed === false;
+          break;
+        case STATUS_COMPLETE:
+          filterByStatus = task.completed === true;
+          break;
+        default:
+          break;
+      }
 
-    // const filterByStatus = status === STATUS_ALL ? true : STATUS_ACTIVE ?
+      // const filterByStatus = status === STATUS_ALL ? true : STATUS_ACTIVE ?
 
-    return filterByColor && filterByStatus;
-  });
+      return filterByColor && filterByStatus;
+    });
+  }, [tasks, filterColorsHex, status]);
 
   return (
     <div>

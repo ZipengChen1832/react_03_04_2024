@@ -1,14 +1,13 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import SelectAllForm from "./containers/SelectAllForm";
 import Day14 from "./Day14";
+import Day16 from "./Day16_testing";
+import { add } from "./Day16_testing/utils/math";
 
 function App() {
   return (
     <div className="App">
-      <SelectAllForm />
-      <Day14 />
+      {/* <Day14 /> */}
+      <Day16 />
     </div>
   );
 }

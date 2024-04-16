@@ -12,7 +12,7 @@ describe("Post", () => {
     //we cannot make actual api call
     //1. a lot of network request, $$$
     //2. we cannot predict what the actual API will respond
-    
+
     jest.spyOn(global, "fetch").mockImplementation(() =>
       Promise.resolve({
         ok: true,
@@ -24,10 +24,7 @@ describe("Post", () => {
 
     const title = await findByText(`Title: ${mockResData.title}`);
     const body = await findByText(`Body: ${mockResData.body}`);
-    debug();
     expect(title).toBeInTheDocument();
     expect(body).toBeInTheDocument();
   });
-
-  test("dqw", () => {});
 });

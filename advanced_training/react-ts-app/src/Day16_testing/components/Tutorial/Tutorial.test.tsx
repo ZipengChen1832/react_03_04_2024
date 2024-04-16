@@ -25,4 +25,13 @@ describe("Tutorial", () => {
 
     expect(foo).toHaveBeenCalledTimes(2);
   });
+
+  test("should work without onClick function", async () => {
+    const user = userEvent.setup();
+    const { getByRole } = render(<Tutorial />);
+    const button = getByRole("button", { name: /Click/i });
+    expect(button).toBeInTheDocument();
+
+    await user.click(button);
+  });
 });
